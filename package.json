@@ -1,0 +1,32 @@
+{
+  "name": "god-of-war-ragnarok",
+  "version": "1.0.0",
+  "description": "Website for game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Albinaaaaa/God-of-War-Ragnarok.git"
+  },
+  "author": "Albina Rybanchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Albinaaaaa/God-of-War-Ragnarok/issues"
+  },
+  "homepage": "https://github.com/Albinaaaaa/God-of-War-Ragnarok#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.4",
+    "html-webpack-plugin": "^5.5.1",
+    "prettier": "2.8.8",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.0",
+    "serve": "^14.2.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
