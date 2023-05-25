@@ -19,6 +19,23 @@ const classes = {
   active: 'active',
 };
 
+const values = [
+  {
+    price: 19.99,
+    title: 'Standard Edition',
+  },
+
+  {
+    price: 19.99,
+    title: 'Standard Edition',
+  },
+
+  {
+    price: 19.99,
+    title: 'Standard Edition',
+  },
+];
+
 const checkbox = document.querySelectorAll('.checkbox');
 const header = document.querySelector('.header');
 const menuLink = document.querySelectorAll('.menu-link');
@@ -28,6 +45,11 @@ const videoButton = document.querySelector('.video-btn');
 const faqItem = document.querySelectorAll('.faq-item');
 const sections = document.querySelectorAll('.section');
 const language = document.querySelectorAll('.language');
+const buyButton = document.querySelectorAll('.buy-button');
+const modal = document.querySelector('.modal');
+const modalTitle = document.querySelector('.modal-subtitle');
+const modalPrice = document.querySelector('.modal-total__price');
+const modalClose = document.querySelector('.modal-close');
 
 const toggleMenu = () => {
   header.classList.toggle(classes.opened);
@@ -164,3 +186,22 @@ setTexts();
 window.addEventListener('scroll', handleScroll);
 
 language.forEach(lang => lang.addEventListener('click', toggleLanguage));
+
+const handleBuyButton = ({ currentTarget: target }) => {
+  const { value } = target.dataset;
+
+  if (!value) return;
+
+  const { price, title } = values[value];
+
+  modalTitle.innerHTML = title;
+  modalPrice.innerText = price + '$';
+  modal.classList.add(classes.opened);
+};
+
+const closeModal = () => {
+  modal.classList.remove(classes.opened);
+};
+
+buyButton.forEach(btn => btn.addEventListener('click', handleBuyButton));
+modalClose.addEventListener('click', closeModal);
